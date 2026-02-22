@@ -1,8 +1,8 @@
 # Aegis
 
-Toolkit de segurança para sistemas financeiros escrito em Go. Implementa os mecanismos de gerenciamento de segredos e tokens, com planejamento de adição de auditoria e controle de acesso.
+Toolkit de segurança para sistemas financeiros escrito em Go. Implementa os mecanismos de gerenciamento de segredos, tokens e auditoria, com planejamento de adição de assinatura de webhooks e controle de acesso.
 
-## Módulos Feitos 
+## Módulos Feitos
 
 ### ✅ Secrets Manager
 Armazenamento seguro de segredos com envelope encryption. Cada segredo tem sua própria chave de dados (DEK) cifrada com AES-256-GCM. A DEK é cifrada com a chave mestra (KEK), garantindo que comprometer um segredo não compromete os demais.
@@ -10,10 +10,10 @@ Armazenamento seguro de segredos com envelope encryption. Cada segredo tem sua p
 ### ✅ Token Engine
 Emissão e validação de JWTs assinados com RS256. A separação entre chave privada (emissão) e chave pública (validação) garante que serviços downstream possam validar tokens sem conseguir criá-los.
 
-## Módulos Pendentes
+### ✅ Audit Log
+Registro imutável de operações com hash chain verificável. Cada entrada inclui o hash da anterior — qualquer adulteração, inserção ou remoção quebra a cadeia e é detectada na verificação.
 
-### 🔲 Audit Log
-Registro imutável de operações com hash chain verificável.
+## Módulos Pendentes
 
 ### 🔲 Webhook Signatures
 Assinatura de eventos com HMAC-SHA256 e proteção contra replay attacks.
