@@ -1,8 +1,8 @@
 # Aegis
 
-Toolkit de segurança para sistemas financeiros escrito em Go. Implementa os mecanismos de gerenciamento de segredos, tokens, auditoria e assinatura de eventos, com planejamento de adição de controle de acesso.
+Toolkit de segurança para sistemas financeiros escrito em Go. Implementa gerenciamento de segredos, tokens, auditoria, assinatura de eventos e controle de acesso.
 
-## Módulos Feitos
+## Módulos
 
 ### ✅ Secrets Manager
 Armazenamento seguro de segredos com envelope encryption. Cada segredo tem sua própria chave de dados (DEK) cifrada com AES-256-GCM. A DEK é cifrada com a chave mestra (KEK), garantindo que comprometer um segredo não compromete os demais.
@@ -16,10 +16,8 @@ Registro imutável de operações com hash chain verificável. Cada entrada incl
 ### ✅ Webhook Signatures
 Assinatura de eventos com HMAC-SHA256 e proteção contra replay attacks. O timestamp incluído na assinatura garante que requisições capturadas não podem ser reusadas fora da janela de tolerância.
 
-## Módulos Pendentes
-
-### 🔲 Access Control
-Controle de acesso por role com princípio de least privilege.
+### ✅ Access Control
+Controle de acesso por role com princípio de least privilege. Cada serviço tem acesso apenas às operações necessárias para sua função — requisito explícito de segregação de funções do Banco Central.
 
 ## Stack
 
